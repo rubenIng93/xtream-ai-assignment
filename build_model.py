@@ -10,7 +10,7 @@ from sklearn.tree import DecisionTreeClassifier
 
 
 class EmployeeChurnClassifier:
-    def __init__(self, config_path='config.yaml'):
+    def __init__(self, config_path='model_config.yaml'):
         self.config_path = config_path
 
     def load_constants(self):

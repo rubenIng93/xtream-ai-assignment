@@ -5,7 +5,7 @@ import requests
 # define the localhost address
 API_URL = 'http://127.0.0.1:5000/predict'  
 # load the example from the json file
-JSON_PATH = 'example.json'
+JSON_PATH = 'api_sample.json'
 # Open the JSON file
 with open(JSON_PATH, 'r') as json_file:
     input_data = json.load(json_file)
