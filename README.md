@@ -187,4 +187,75 @@ Be sure to provide him with clean and well-structured code.
 ---
 
 ## How to run
-Please fill this section as part of the assignment.
+
+The chosen task is the **Employee Churn** one.
+
+This procedure assume you have both Python and Jupyter notebook installed on you device. Otherwise, you can follow these links:
+
+- [Install Python](https://realpython.com/installing-python/)
+- [Install Jupyter Notebook](https://docs.jupyter.org/en/latest/install/notebook-classic.html)
+
+### Project Structure
+
+As we are asked to go trough many challanges, they are addressed in different files:
+
+- **Challenges 1 to 3** are addressed in the [exploratory-analysis](exploratory-analysis.ipynb) notebook.
+- **Challenge 4** is addressed in the [build_model](build_model.py) script.
+- **Challenge 5** is addressed in .
+
+### Setup
+
+To execute the files in this repository you need some libraries and an active Python environment.
+
+The suggested way of obtaining so, is to create a virtual environment in you local folder. You can do that in the following way:
+
+```CLI
+python<version> -m venv <env_name>
+```
+
+where the `version` can be retrieved by opening a terminal and typing python followed by tab key; the `env_name` instead canbe any arbitrary name you desire.
+
+Once done, you have to activate the brand new environment, and you may want to update the pip library manager, useful for getting the libraries required.
+
+```CLI
+source <env_name>/bin/activate
+pip install -U pip
+```
+
+Now, you are ready to install all the libraries required for this project. They are all listed in the `requirements.txt` file, together with their version. To do so, you have to use the following command:
+
+```CLI
+pip install -r requirements.txt
+```
+
+You are done with the setup!
+
+### Execute the code
+
+The procedure will be different depending of the script.
+
+#### Exploratory analysis
+
+Here the code is in a jupyter notebook, thus to run the code you simply have to press the *Run All* button.
+
+> If you are inside VScode, please select as a kernel the created python virtual environment through the button on the upper-righten side.
+
+#### Build Model
+
+To build the model you may first want to define your own configuration. This can be done by editing the `config.yaml` file, which has by default the following structure:
+
+```yaml
+csv_path : 'datasets/employee-churn/churn.csv'
+oversampling : true
+scoring : 'accuracy'
+max_depth : 3 # decision tree max depth
+num_features_clf : 4 # num output features after ANOVA f selection
+```
+
+> Please specify all the reported variables, as for simplicity the sanity checking has not been implemented.
+
+Once you are done, you can run the code by opening a terminal (please be sure to have the virtual environment activated) and by typing:
+
+```CLI
+python build_model.py
+```

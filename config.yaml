@@ -1,0 +1,5 @@
+csv_path : 'datasets/employee-churn/churn.csv'
+oversampling : true
+scoring : 'accuracy'
+max_depth : 3
+num_features_clf : 4
