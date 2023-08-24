@@ -201,7 +201,7 @@ As we are asked to go trough many challanges, they are addressed in different fi
 
 - **Challenges 1 to 3** are addressed in the [exploratory-analysis](exploratory-analysis.ipynb) notebook.
 - **Challenge 4** is addressed in the [build_model](build_model.py) script.
-- **Challenge 5** is addressed in .
+- **Challenge 5** is addressed in two files: [rest_api](rest_api.py) contains the code to run the REST API, while [test_api](test_api.py) contains a simple testing script.
 
 ### Setup
 
@@ -259,3 +259,27 @@ Once you are done, you can run the code by opening a terminal (please be sure to
 ```CLI
 python build_model.py
 ```
+
+In output you will have a file called `clf.joblib` which is the dumped version of the trained classifier.
+
+#### Run the REST API
+
+Without specifying any parameters the REST API aimed to predict a employee instance, is exposed at the localhost address, under the `/predict` route, namely: `http://127.0.0.1:5000/predict`.
+
+To run the script you can do the procedure done in the section above, i.e., with the virtual environment activated, you type in the terminal:
+
+```CLI
+python rest_api.py
+```
+
+Differently from the previous script, this launch a self-hosted server in your local machine, that won't be stopped until you close the terminal, or you type Ctrl+C.
+
+#### Test the API
+
+First of all **be sure to have your server launched**. Then, you must open an additional terminal, activate the virtual environment, and use the command the following command to execute the script:
+
+```CLI
+python test_api.py
+```
+
+This will return a prediction based on the data found in the `example.json` file, which you can modify to obtain new predictions.

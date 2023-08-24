@@ -1,12 +1,13 @@
 import numpy as np
 import pandas as pd
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.model_selection import cross_validate
-from imblearn.over_sampling import SMOTE
-from sklearn.preprocessing import OneHotEncoder
-from sklearn.feature_selection import SelectKBest, f_classif
-from joblib import dump
 import yaml
+from imblearn.over_sampling import SMOTE
+from joblib import dump
+from sklearn.feature_selection import SelectKBest, f_classif
+from sklearn.model_selection import cross_validate
+from sklearn.preprocessing import OneHotEncoder
+from sklearn.tree import DecisionTreeClassifier
+
 
 class EmployeeChurnClassifier:
     def __init__(self, config_path='config.yaml'):
@@ -135,6 +136,7 @@ class EmployeeChurnClassifier:
         feature_selector = SelectKBest(f_classif, k=self.NUM_FEATURES_CLF)
         X_new = feature_selector.fit_transform(self.X_encoded, self.y)
         best_features = feature_selector.get_feature_names_out()
+        print(f'Best Features: {best_features.tolist()}')
         self.X_final = pd.DataFrame(X_new, columns=best_features)
 
     def train_classifier(self):

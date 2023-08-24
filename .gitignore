@@ -133,3 +133,6 @@ pyenv
 
 # model
 *.joblib
+
+# workspace settings
+.vscode

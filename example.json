@@ -1,0 +1,15 @@
+{
+    "enrollee_id": 0,
+    "city": 4,
+    "city_development_index": 0.99,
+    "gender": "Male",
+    "relevent_experience": "Has relevent experience",
+    "enrolled_university": "no_enrollment",
+    "education_level": "High School",
+    "major_discipline": "STEM",
+    "experience": "<1",
+    "company_size": "50-99",
+    "company_type": "not_specified",
+    "last_new_job": "1",
+    "training_hours": 30    
+}
