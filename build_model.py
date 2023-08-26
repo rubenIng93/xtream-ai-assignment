@@ -144,9 +144,9 @@ class EmployeeChurnClassifier:
         Train the Decision Tree classifier and save the best model.
         """
         tree = DecisionTreeClassifier(random_state=0, max_depth=self.MAX_DEPTH)
-        result = cross_validate(tree, self.X_final, self.y, cv=5, scoring='accuracy', return_estimator=True)
+        result = cross_validate(tree, self.X_final, self.y, cv=5, scoring='recall', return_estimator=True)
         best_tree = result['estimator'][np.argmax(result['test_score'])]
-        self.best_accuracy = np.max(result['test_score']) * 100.0
+        self.best_recall = np.max(result['test_score']) * 100.0
 
         self.best_tree = best_tree
         self.dump_classifier()
@@ -156,7 +156,7 @@ class EmployeeChurnClassifier:
         Dump the best classifier to a file.
         """
         dump(self.best_tree, 'clf.joblib')
-        print(f"Accuracy achieved: {self.best_accuracy:.2f} %")
+        print(f"Recall achieved: {self.best_recall:.2f} %")
 
     def run_classifier_pipeline(self):
         """
