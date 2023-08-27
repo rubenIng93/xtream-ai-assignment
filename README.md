@@ -242,7 +242,7 @@ Here the code is in a jupyter notebook, thus to run the code you simply have to 
 
 #### Build Model
 
-To build the model you may first want to define your own configuration. This can be done by editing the `config.yaml` file, which has by default the following structure:
+To build the model you may first want to define your own configuration. This can be done by editing the `model_config.yaml` file, which has by default the following structure:
 
 ```yaml
 csv_path : 'datasets/employee-churn/churn.csv'
@@ -282,4 +282,4 @@ First of all **be sure to have your server launched**. Then, you must open an ad
 python test_api.py
 ```
 
-This will return a prediction based on the data found in the `example.json` file, which you can modify to obtain new predictions.
+This will return a prediction based on the data found in the `api_sample.json` file, which you can modify to obtain new predictions.
